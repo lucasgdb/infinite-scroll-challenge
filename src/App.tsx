@@ -23,13 +23,15 @@ function App() {
   }, []);
 
   return (
-    <div className="max-w-[800px] mx-auto">
-      {articles.map((article) => (
-        <p key={article.id} className="text-justify mt-5">
-          {article.content}
-        </p>
-      ))}
-    </div>
+    <main className="px-4">
+      <div className="max-w-[800px] mx-auto">
+        {articles.map((article) => (
+          <p key={article.id} className="text-justify mt-5">
+            {article.content}
+          </p>
+        ))}
+      </div>
+    </main>
   );
 }
 
