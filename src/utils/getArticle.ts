@@ -8,12 +8,14 @@ interface getArticleProps {
 
 type Article = {
   id: string;
+  title: string;
   content: string;
 };
 
 export default function getArticle({ size }: getArticleProps = { size: 10 }): Article {
   return {
     id: uuid(),
+    title: 'Artigo Lorem Ipsum',
     content: article.repeat(size),
   };
 }

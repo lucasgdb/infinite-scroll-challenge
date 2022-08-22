@@ -26,9 +26,11 @@ function App() {
     <main className="px-4">
       <div className="max-w-[800px] mx-auto">
         {articles.map((article) => (
-          <p key={article.id} className="text-justify mt-5">
-            {article.content}
-          </p>
+          <div key={article.id} className="mt-5">
+            <h2 className="font-extrabold text-2xl text-gray-800">{article.title}</h2>
+
+            <p className="text-justify text-gray-700 mt-2">{article.content}</p>
+          </div>
         ))}
       </div>
     </main>
