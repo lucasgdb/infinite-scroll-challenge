@@ -10,7 +10,7 @@ function App() {
     async function getArticles() {
       const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
 
-      const isAtBottom = scrollTop + clientHeight === scrollHeight;
+      const isAtBottom = scrollTop + clientHeight >= scrollHeight * 0.98;
       if (isAtBottom) {
         const newArticle = getArticle({ size: getRandomNumber({ min: 1, max: 20 }) });
         setArticles((prevArticles) => [...prevArticles, newArticle]);
