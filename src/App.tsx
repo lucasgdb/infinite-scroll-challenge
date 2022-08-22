@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import getArticle from './utils/getArticle';
 import getRandomNumber from './utils/getRandomNumber';
 
-function App() {
+export default function App() {
   const [articles, setArticles] = useState([getArticle(), getArticle(), getArticle(), getArticle(), getArticle()]);
 
   useEffect(() => {
@@ -35,5 +35,3 @@ function App() {
     </main>
   );
 }
-
-export default App;
