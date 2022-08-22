@@ -4,14 +4,14 @@ import getArticle from '../utils/getArticle';
 import getRandomNumber from '../utils/getRandomNumber';
 
 export default function ScrollableFloatingCard() {
-  const [articles, setArticles] = useState([getArticle(), getArticle(), getArticle(), getArticle(), getArticle()]);
+  const [articles, setArticles] = useState([getArticle({ size: 3 })]);
 
   function handleScroll(event: React.MouseEvent<HTMLDivElement>) {
     const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
 
     const isAtBottom = scrollTop + clientHeight >= scrollHeight * 0.95;
     if (isAtBottom) {
-      const newArticle = getArticle({ size: getRandomNumber({ min: 1, max: 20 }) });
+      const newArticle = getArticle({ size: getRandomNumber({ min: 1, max: 2 }) });
       setArticles((prevArticles) => [...prevArticles, newArticle]);
     }
   }
