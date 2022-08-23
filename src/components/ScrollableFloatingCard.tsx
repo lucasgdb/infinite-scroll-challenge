@@ -18,7 +18,7 @@ export default function ScrollableFloatingCard() {
 
   return (
     <section
-      className="fixed top-[16px] right-[16px] w-[300px] h-[300px] border rounded-[8px] overflow-y-auto p-4 bg-white flex flex-col gap-[16px] overscroll-contain customized-scroll"
+      className="fixed top-[16px] right-[16px] w-[300px] h-[300px] border shadow-2xl rounded-[8px] overflow-y-auto p-4 bg-white flex flex-col gap-[16px] overscroll-contain customized-scroll"
       onScroll={handleScroll}
     >
       {articles.map((article) => (
