@@ -7,7 +7,7 @@ export default function App() {
   const [articles, setArticles] = useState([getArticle(), getArticle(), getArticle(), getArticle(), getArticle()]);
 
   useEffect(() => {
-    async function getArticles() {
+    function getArticles() {
       const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
 
       const isAtBottom = scrollTop + clientHeight >= scrollHeight * 0.95;
