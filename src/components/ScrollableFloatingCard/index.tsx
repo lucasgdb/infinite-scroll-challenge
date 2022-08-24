@@ -27,7 +27,7 @@ export default function ScrollableFloatingCard() {
       {articles.map((article) => (
         <div key={article.id}>
           <h2 className="font-extrabold text-2xl text-gray-800">{article.title}</h2>
-          <p className="text-justify text-gray-600 mt-4">{article.content}</p>
+          <p className="text-justify text-gray-600 mt-2">{article.content}</p>
         </div>
       ))}
     </section>
