@@ -1,7 +1,9 @@
+import './styles.scss';
+
 import React, { useState } from 'react';
 
-import getArticle from '../utils/getArticle';
-import getRandomNumber from '../utils/getRandomNumber';
+import getArticle from '../../utils/getArticle';
+import getRandomNumber from '../../utils/getRandomNumber';
 
 export default function ScrollableFloatingCard() {
   const [articles, setArticles] = useState([getArticle({ size: 3 })]);
@@ -18,7 +20,8 @@ export default function ScrollableFloatingCard() {
 
   return (
     <section
-      className="fixed top-[16px] right-[16px] w-[300px] h-[300px] border shadow-2xl rounded-[8px] overflow-y-auto p-4 bg-white flex flex-col gap-[16px] overscroll-contain customized-scroll"
+      id="scrollable-floating-card"
+      className="fixed top-[16px] right-[16px] w-[300px] h-[300px] border shadow-2xl rounded-[8px] overflow-y-auto p-4 bg-white flex flex-col gap-[16px] overscroll-contain"
       onScroll={handleScroll}
     >
       {articles.map((article) => (
