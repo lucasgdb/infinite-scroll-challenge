@@ -20,7 +20,7 @@ export default function App() {
     function getArticles() {
       const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
 
-      const isAtBottom = scrollTop + clientHeight >= scrollHeight * 0.95;
+      const isAtBottom = scrollTop + clientHeight >= scrollHeight * 0.98;
       if (isAtBottom) {
         const newArticle = getArticle({ size: getRandomNumber({ min: 1, max: 20 }) });
         setArticles((prevArticles) => [...prevArticles, newArticle]);
@@ -33,12 +33,12 @@ export default function App() {
   }, []);
 
   return (
-    <main className="px-6">
-      <div className="max-w-3xl mx-auto">
+    <main className="p-6">
+      <div className="max-w-3xl mx-auto flex flex-col gap-4">
         {articles.map((article) => (
-          <div key={article.id} className="mt-5">
+          <div key={article.id}>
             <h2 className="font-extrabold text-3xl text-gray-800">{article.title}</h2>
-            <p className="text-justify text-gray-600 mt-2">{article.content}</p>
+            <p className="text-justify text-gray-600 mt-4">{article.content}</p>
           </div>
         ))}
       </div>

@@ -11,7 +11,7 @@ export default function ScrollableFloatingCard() {
   function handleScroll(event: React.MouseEvent<HTMLDivElement>) {
     const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
 
-    const isAtBottom = scrollTop + clientHeight >= scrollHeight * 0.95;
+    const isAtBottom = scrollTop + clientHeight >= scrollHeight * 0.98;
     if (isAtBottom) {
       const newArticle = getArticle({ size: getRandomNumber({ min: 1, max: 2 }) });
       setArticles((prevArticles) => [...prevArticles, newArticle]);
@@ -26,8 +26,8 @@ export default function ScrollableFloatingCard() {
     >
       {articles.map((article) => (
         <div key={article.id}>
-          <h2 className="font-extrabold text-2xl text-gray-800 m-0">{article.title}</h2>
-          <p className="text-justify text-gray-700 mt-2">{article.content}</p>
+          <h2 className="font-extrabold text-2xl text-gray-800">{article.title}</h2>
+          <p className="text-justify text-gray-600 mt-4">{article.content}</p>
         </div>
       ))}
     </section>
